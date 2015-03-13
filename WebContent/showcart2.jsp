@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<%@ page import="com.natickweb.mvc.*"%>
 
 	<%
@@ -16,8 +15,7 @@
 
 	Items in cart:
 	<%= cart == null ? "error" : cart.getTotalItems() %>
-	
-	<a href="<%= response.encodeUrl(request.getContextPath() + "/showcart2.jsp") %>">Click here to go to showcart2</a>
 
+	
 </body>
 </html>

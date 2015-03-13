@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class Session
  */
-@WebServlet("/Session")
+@WebServlet("/Session_Tracking")
 public class Session extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,7 +33,11 @@ public class Session extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 
-		Cart cart = new Cart();
+		Cart cart = (Cart)session.getAttribute("cart");
+		
+		if(cart == null){
+			cart = new Cart();
+		}
 
 		cart.setTotalItems(10);
 
